@@ -11,8 +11,8 @@ def process_request(args: Arguments):
     columns = rows[0]
     rows = rows[1:]
     typify_rows(rows)
-    f = FilterProcessor()
     if args.where:
+        f = FilterProcessor()
         rows = f.filter_file(rows, columns, filter_parameter)
     if args.aggregate:
         result = aggregate(rows, columns, aggregate_parameter)
